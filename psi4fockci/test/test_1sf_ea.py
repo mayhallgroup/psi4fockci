@@ -12,10 +12,10 @@ N 0 0 2.5
 symmetry c1
 """)
 
-# Test: RAS(p)-3SF/cc-pvdz with N2 (0,7 to 0,1)
+# Test: CAS-1SF-EA/CC-PVDZ with N2
 def test_1():
-  options = {"basis": "cc-pvdz", 'num_roots': 2, 'diis_start': 20}
-  e = sf_cas( 0, 1, n2, conf_space="p", add_opts=options, localize=True )
-  expected = -108.773240257969
+  options = {"basis": "cc-pvdz"}
+  e = sf_cas( -1, 2, n2, add_opts=options, localize=True )
+  expected = -108.600832070267
   assert (e - expected) < threshold
 
